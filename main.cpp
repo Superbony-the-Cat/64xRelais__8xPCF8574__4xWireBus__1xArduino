@@ -6,10 +6,10 @@
 //https://old.circuitmess.com/wp-content/uploads/2017/10/screenshot.99.jpg
 //https://youtu.be/-CXSEWlMYFs
 
-//   +  /  5V
-//   -  /  GND
-//   SDA / A4
-//   SCL / A5
+//   +  /  5V    Arduino Uno
+//   -  /  GND       "
+//   SDA / A4        "
+//   SCL / A5        "
 
 byte txData = 0;
 byte relaisstatus_all = 255;    // hex FF   , bit  1111 1111 = all relais off
