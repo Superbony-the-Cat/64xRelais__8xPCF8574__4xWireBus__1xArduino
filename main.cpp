@@ -15,7 +15,7 @@ byte txData = 0;
 byte relaisstatus_all = 255;    // hex FF   , bit  1111 1111 = all relais off
 
 
-byte weg = 0;   // the waytempo ( 0= r  /  1 = l)
+byte weg = 0;   // the waytempo switch ( 0 (slow)  or  1 (to fast))
 int zeit = 599;   // first time slow (599)
 
 byte canl = 7;  // (0) 8 relais  , (1) 16 relais  ....  (7) 64 relais(max)
