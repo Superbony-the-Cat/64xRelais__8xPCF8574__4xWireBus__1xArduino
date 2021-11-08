@@ -32,7 +32,7 @@ void setup() {
 	Wire.begin();
 }
 void loop() {
-                                  // channel  0 - 7  p = 0 /7  
+                                                                // channel  0 - 7  p = 0 /7  
 	    for (int p = 0; p <= canl ; p++) {
 		int I2CADRESSE1 = I2CADRESSE + p;
                 byte bit_relais = 1;
@@ -41,10 +41,10 @@ void loop() {
 			deviceWrite1(~relaisstatus_all, I2CADRESSE1);
 			delay(zeit);
 		  }
+                 
+		  deviceWrite1(~0, I2CADRESSE1);                  // new  channel (1-7)
 
-		  deviceWrite1(~0, I2CADRESSE1);   // new  channel (1-7)
-
-			if ((weg == 0) && (zeit > 10))
+			if ((weg == 0) && (zeit > 10))            // to fast
 				     {
 					zeit = zeit - zeit / 10;
                                      } else {
@@ -52,7 +52,7 @@ void loop() {
 					weg = 1;
 				     }
 
-			if ((weg == 1) && (zeit < 800))
+			if ((weg == 1) && (zeit < 800))           // to slow  (max800)       
 				     {
 					zeit = zeit + zeit / 10;
 				      } else {
