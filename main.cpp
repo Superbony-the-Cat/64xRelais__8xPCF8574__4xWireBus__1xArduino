@@ -4,6 +4,7 @@
 #define  I2CADRESSE 32 //    "B0100 + 0000"  = oct 40  =  dez. 32
 //#define  I2CADRESSE 56 //  "B0111 + 0000"  = oct 70  =  dez  56 a typ
 //https://old.circuitmess.com/wp-content/uploads/2017/10/screenshot.99.jpg
+
 //https://youtu.be/-CXSEWlMYFs
 
 //   +  /  5V    Arduino Uno
@@ -20,17 +21,16 @@ int zeit = 599;   // first time slow (599)
 
 byte canl = 7;  // (0) 8 relais  , (1) 16 relais  ....  (7) 64 relais(max)
 
-void deviceWrite1(byte txData, int ADRESSE) /// relais output 8574 /a , Dat + Adress
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+void deviceWrite1(byte txData, int ADRESSE) /// relais output PCF8574 /a , Dat + Adress
 		{
 	Wire.beginTransmission(ADRESSE);
 	Wire.write(txData);
 	Wire.endTransmission();
 }
-
 void setup() {
 	Wire.begin();
 }
-
 void loop() {
                                   // channel  0 - 7  p<
 	for (int p = 0; p <= canl ; p++) {
